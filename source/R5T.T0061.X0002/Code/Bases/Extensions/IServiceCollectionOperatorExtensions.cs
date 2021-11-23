@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Microsoft.Extensions.DependencyInjection;
+using IMicrosoftServiceCollection = Microsoft.Extensions.DependencyInjection.IServiceCollection;
 
 using R5T.Magyar.IO;
 
@@ -15,7 +15,7 @@ namespace R5T.T0061.X0002
     {
         public static void DescribeToTextFileSynchronous(this IServiceCollectionOperator _,
             string textFilePath,
-            IServiceCollection services)
+            IMicrosoftServiceCollection services)
         {
             var stringBuilder = new StringBuilder();
 
@@ -32,7 +32,7 @@ namespace R5T.T0061.X0002
 
         public static async Task DescribeToTextFile(this IServiceCollectionOperator _,
             string textFilePath,
-            IServiceCollection services)
+            IMicrosoftServiceCollection services)
         {
             var stringBuilder = new StringBuilder();
 
@@ -49,7 +49,7 @@ namespace R5T.T0061.X0002
 
         public static void DescribeToStringBuilder(this IServiceCollectionOperator _,
             StringBuilder stringBuilder,
-            IServiceCollection services)
+            IMicrosoftServiceCollection services)
         {
             var serviceCount = services.Count;
 
@@ -101,7 +101,7 @@ namespace R5T.T0061.X0002
         }
 
         public static IEnumerable<ServiceDescriptorDescription> GetDescriptions(this IServiceCollectionOperator _,
-            IServiceCollection services)
+            IMicrosoftServiceCollection services)
         {
             var output = services.Select(xService => xService.ToServiceDescriptorDescription());
             return output;

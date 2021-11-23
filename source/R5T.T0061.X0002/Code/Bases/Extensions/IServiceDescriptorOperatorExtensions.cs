@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-using Microsoft.Extensions.DependencyInjection;
+using MicrosoftServiceDescriptor = Microsoft.Extensions.DependencyInjection.ServiceDescriptor;
 
 
 namespace R5T.T0061.X0002
@@ -12,7 +12,7 @@ namespace R5T.T0061.X0002
         /// Note: the last implementation of a service type will be the service that is actually provided if multiple implementations for a service type are registered, but only one is requested.
         /// </summary>
         public static string Describe(this IServiceDescriptorOperator _,
-            ServiceDescriptor serviceDescriptor,
+            MicrosoftServiceDescriptor serviceDescriptor,
             bool isLastImplementationOfServiceType = true)
         {
             var stringBuilder = new StringBuilder();
@@ -43,21 +43,21 @@ namespace R5T.T0061.X0002
         }
 
         public static string GetServiceTypeStandardRepresentation(this IServiceDescriptorOperator _,
-            ServiceDescriptor serviceDescriptor)
+            MicrosoftServiceDescriptor serviceDescriptor)
         {
             var output = serviceDescriptor.ServiceType.FullName;
             return output;
         }
 
         public static string GetImplementationTypeStandardRepresentation(this IServiceDescriptorOperator _,
-            ServiceDescriptor serviceDescriptor)
+            MicrosoftServiceDescriptor serviceDescriptor)
         {
             var output = serviceDescriptor.ImplementationType?.FullName ?? NullHelper.StandardStringRepresentation;
             return output;
         }
 
         public static string GetLifetimeStandardRepresentation(this IServiceDescriptorOperator _,
-            ServiceDescriptor serviceDescriptor)
+            MicrosoftServiceDescriptor serviceDescriptor)
         {
             var output = serviceDescriptor.Lifetime.ToStringStandard();
             return output;
