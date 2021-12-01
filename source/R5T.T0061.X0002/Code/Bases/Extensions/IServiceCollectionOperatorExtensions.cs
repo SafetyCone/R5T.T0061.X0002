@@ -44,7 +44,8 @@ namespace R5T.T0061.X0002
 
             using var fileWriter = StreamWriterHelper.NewWrite(textFilePath);
 
-            await fileWriter.WriteLineAsync(text);
+            await fileWriter.WriteAsync(text);
+            await fileWriter.FlushAsync();
         }
 
         public static void DescribeToStringBuilder(this IServiceCollectionOperator _,
