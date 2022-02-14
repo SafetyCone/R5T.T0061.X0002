@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Text;
 
+using R5T.Magyar;
+
 using MicrosoftServiceDescriptor = Microsoft.Extensions.DependencyInjection.ServiceDescriptor;
 
 
