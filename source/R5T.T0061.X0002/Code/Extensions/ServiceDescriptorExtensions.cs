@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 
+using R5T.Magyar;
+
 using MicrosoftServiceDescriptor = Microsoft.Extensions.DependencyInjection.ServiceDescriptor;
 
 
